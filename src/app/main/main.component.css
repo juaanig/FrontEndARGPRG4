@@ -1,0 +1,40 @@
+@import url('https://fonts.googleapis.com/css2?family=Oswald:wght@400;500&display=swap'); 
+
+/* =============== SECTION ================*/
+.img-port-profile{
+    margin: 10px;
+    padding-bottom: 50px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.img-port{
+    height: 50vh;
+    background-image: url("../../assets/images/duke.jpg");
+    background-size:cover;
+    background-position:top;
+    border-radius: 11px;
+}
+
+.img-profile{
+    margin: -50px 30px;
+    border: 2px solid black;
+    border-radius: 50%;
+    background-image: url("../../assets/images/gji.jpg");
+    background-size:cover;
+    background-position:center;
+    width: 20vh;
+    height: 20vh;
+}
+/*  ============= DATA  =============*/
+.data-person{
+    background-color: aliceblue;
+    margin: 50px 25px;
+}
+
+.buttons-person{
+    width: 240px;
+    margin-left: 25px;
+    display: flex;
+    justify-content: space-between;
+}

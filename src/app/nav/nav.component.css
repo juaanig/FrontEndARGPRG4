@@ -1,7 +1,7 @@
 .nav {
     height: 50px;
     width: 100%;
-    background-color: #4d4d4d;
+    background-color: #000000;
     position: relative;
 }
 
@@ -20,25 +20,24 @@ padding: 10px 10px 10px 10px;
 display: none;
 }
 
-.nav > .nav-links {
+.nav > .nav-login {
 display: inline;
 float: right;
 font-size: 18px;
 }
 
-.nav > .nav-links > a {
+.nav > .nav-login > button {
 display: inline-block;
 padding: 13px 10px 13px 10px;
 text-decoration: none;
-color: #efefef;
+color: #ffffff;
+cursor: pointer;
+background-color: #000000;
 }
 
-.nav > .nav-links > a:hover {
-background-color: rgba(0, 0, 0, 0.3);
-}
-
-.nav > #nav-check {
-display: none;
+.nav > .nav-login > button:hover {
+background-color: #eee ;
+color:  rgba(0, 0, 0);
 }
 
 
@@ -65,7 +64,7 @@ display: none;
         height: 10px;
         border-top: 2px solid #eee;
     }
-    .nav > .nav-links {
+    .nav > .nav-login {
         position: absolute;
         display: block;
         width: 100%;
@@ -76,14 +75,14 @@ display: none;
         top: 50px;
         left: 0px;
     }
-    .nav > .nav-links > a {
+    .nav > .nav-login > button {
         display: block;
         width: 100%;
     }
-    .nav > #nav-check:not(:checked) ~ .nav-links {
+    .nav > #nav-check:not(:checked) ~ .nav-login {
         height: 0px;
     }
-    .nav > #nav-check:checked ~ .nav-links {
+    .nav > #nav-check:checked ~ .nav-login {
         height: calc(100vh - 50px);
         overflow-y: auto;
     }
