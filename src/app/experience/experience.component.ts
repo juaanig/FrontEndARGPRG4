@@ -1,5 +1,5 @@
 import { Component,Input } from '@angular/core';
-import { Subscription } from 'rxjs';
+import { Observable, Subscription } from 'rxjs';
 import { UiService } from '../service/ui.service';
 
 
@@ -10,11 +10,23 @@ import { UiService } from '../service/ui.service';
 })
 export class ExperienceComponent {
 
+  title:string = "" ;
+  expData:string= "" ;
+
+
+
   show:boolean = false ;
   subscription?:Subscription;
   
   constructor( private uiService:UiService){
     this.subscription = this.uiService.onToggle().subscribe(value => this.show = value)
   }
+
+  onSubmit(){
+  
+
+  }
+
+
 
 }
