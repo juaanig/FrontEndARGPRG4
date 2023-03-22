@@ -5,7 +5,7 @@ import { AppComponent } from './app.component';
 import { NavComponent } from './nav/nav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MainComponent } from './main/main.component';
-import { ButtonBoxComponent } from './button-box/button-box.component';
+import { ExperienceComponent } from './experience/experience.component';
 
 @NgModule({
   declarations: [
@@ -13,7 +13,7 @@ import { ButtonBoxComponent } from './button-box/button-box.component';
     NavComponent,
     PageNotFoundComponent,
     MainComponent,
-    ButtonBoxComponent
+    ExperienceComponent,
   ],
   imports: [
     BrowserModule
