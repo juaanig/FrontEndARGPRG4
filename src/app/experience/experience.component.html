@@ -3,14 +3,13 @@
     <div class="d-flex flex-column mt-3 mb-3">
         <form 
             action="" 
-            (ngSubmit)="onSubmit()"
         >
             <div class="d-flex flex-column form-control" >
-                <input type="text" [(ngModel)]="title">
-                <textarea name="" id="" cols="30" rows="10" [(ngModel)]="title"></textarea>
+                <input type="text" [(ngModel)]="title" name="title">
+                <textarea name="expData" id="" cols="30" rows="10" [(ngModel)]="expData" ></textarea>
             </div>
             <div class="form-control">
-                <button type="submit" class="btn btn-success" >confirmar</button>
+                <button class="btn btn-success" (click)="onClick()">confirmar</button>
                 <button class="btn btn-danger">cancelar</button>
                 <button class="btn btn-primary">editar</button>
             </div>

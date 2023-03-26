@@ -1,0 +1,24 @@
+{
+  "experiences": [
+    {
+      "id": 0,
+      "title": "Grupo petersen",
+      "expData": "Oficial de atención al cliente"
+    },
+    {
+      "id": 1,
+      "title": "Cocheras spinelli",
+      "expData": "Administrador"
+    },
+    {
+      "id": 2,
+      "title": "Coop de trabajo jabonera de cañada rosquin",
+      "expData": "Oficial mecanico "
+    },
+    {
+      "title": "accenture",
+      "expData": "tas",
+      "id": 3
+    }
+  ]
+}
