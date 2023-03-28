@@ -4,8 +4,7 @@
 .img-port-profile{
     margin: 10px;
     padding-bottom: 50px;
-    border: 1px solid black;
-    border-radius: 10px;
+
 }
 
 .img-port{
@@ -30,11 +29,4 @@
 .data-person{
     background-color: aliceblue;
     margin: 50px 25px;
-}
-
-.buttons-person{
-    width: 240px;
-    margin-left: 25px;
-    display: flex;
-    justify-content: space-between;
 }

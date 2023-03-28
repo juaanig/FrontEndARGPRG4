@@ -6,7 +6,8 @@ import { NavComponent } from './nav/nav.component';
 import { PageNotFoundComponent } from './page-not-found/page-not-found.component';
 import { MainComponent } from './main/main.component';
 import { ExperienceComponent } from './experience/experience.component';
-import { HttpClientModule } from '@angular/common/http'
+import { HttpClientModule } from '@angular/common/http';
+import { StudiesComponent } from './studies/studies.component'
 
 
 @NgModule({
@@ -16,6 +17,7 @@ import { HttpClientModule } from '@angular/common/http'
     PageNotFoundComponent,
     MainComponent,
     ExperienceComponent,
+    StudiesComponent,
   ],
   imports: [
     BrowserModule,

@@ -1,6 +1,6 @@
 import { Component, EventEmitter, Output } from '@angular/core';
 import { Subscription } from 'rxjs';
-import { UiService } from '../service/ui.service';
+import { UiService } from '../../service/ui.service';
 
 @Component({
   selector: 'app-main',
@@ -11,8 +11,8 @@ export class MainComponent {
 
 
   //Se inyecta el servicio para ejecutar la función toggleAddExperience (similar a CONTEXT de react)
-  constructor(private uiService:UiService){}
+  // constructor(private uiService:UiService){}
 
-  onClick = () => this.uiService.toggleAddExperience() ;
+  // onClick = () => this.uiService.toggleAddExperience() ;
 
 }

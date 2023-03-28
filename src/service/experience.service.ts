@@ -21,10 +21,10 @@ export class ExperienceService {
     return this.http.get<Experience[]>(this.apiUrl);
   }
 
-  // deleteExperience(Experience:Experience): Observable<Experience>{
-  //   const url = `${this.apiUrl}/${Experience.id}`;
-  //   return this.http.delete<Experience>(url);
-  // }
+  deleteExperience(Experience:Experience): Observable<Experience>{
+    const url = `${this.apiUrl}/${Experience.id}`;
+    return this.http.delete<Experience>(url);
+  }
 
   // updateExperienceReminder(Experience:Experience): Observable<Experience>{
   //   const url = `${this.apiUrl}/${Experience.id}`;
