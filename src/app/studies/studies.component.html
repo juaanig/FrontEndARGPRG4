@@ -1,7 +1,36 @@
+<!--Si User entra logeado-->
+<section class="studies-general" >
+    <!-- ================================================================================================== -->
+    <button class="btn btn-warning m-3" (click)="toggleAddStudies()">Añadir estudios</button>
+
+    <div class="container" *ngIf="showFormStudies">
+        <div class="d-flex flex-column mt-3 mb-3">
+            <form action="" >
+                <div class="d-flex flex-column form-control" >
+                    <input type="text" [(ngModel)]="title" name="title">
+                    <textarea name="studiesData" id="" cols="30" rows="10" [(ngModel)]="studiesData" ></textarea>
+                </div>
+                <div class="form-control">
+                    <button class="btn btn-success" (click)="onAdd()">confirmar</button>
+                </div>
+            </form>
+        </div>
+    </div>
+    <!-- ================================================================================================== -->
+    <div class="container mt-3 card text-bg-primary mb-3" *ngFor="let std of studies" >
+        <h4 class="card-title">{{std.title}}</h4>
+        <p class="card-text">{{std.stdData}}</p>
+        <div class="d-flex flex-row-reverse mb-2">
+            <button class="btn btn-danger" (click)="onDelete(std)">borrar</button>
+        </div>
+    </div>
+</section>
+
 <hr>
 <ol>
-    <li>-CREAR ARACHIVO SEVICE.STUDIES.TS</li>
+    <li>-CREAR ARACHIVO SEVICE.STUDIES.TS</li> <p class="bg-success text-white">LISTO</p>
+    <li>-VISUALMETE COPIAR EL ESTILO, SE PERSONALIZA LUEGO </li> <p class="bg-success text-white">LISTO</p>
+    <li>-CREAR INTERFACE</li> <p class="bg-success text-white">LISTO</p>
+    <h2 class="card card-title"> Ver conexión a BBDD</h2>
     <li>-APLICAR MISMA LOGICA PARA BBDD COMO SE REALIZÓ EN EXPERIENCES</li>
-    <li>-VISUALMETE COPIAR EL ESTILO, SE PERSONALIZA LUEGO </li>
-    <li>-CREAR INTERFACE</li>
 </ol>

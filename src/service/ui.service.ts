@@ -6,19 +6,40 @@ import {Observable,Subject} from 'rxjs'
 })
 export class UiService {
 
-  private showAddExperience:boolean = false;
+  //============== FormExp ==============
+  private showFormExp:boolean = false;
+  
+  //============== FormStd ==============
+  private showFormStd:boolean = false;
+  
   private subject = new Subject<any>();
+  private studies = new Subject<any>();
+
 
   constructor() { }
 
-  toggleAddExperience():void{
-    this.showAddExperience = !this.showAddExperience;
-    this.subject.next(this.showAddExperience) 
+  //============== FormExp ==============
+  toggleShowExperience():void{
+    this.showFormExp = !this.showFormExp;
+    this.subject.next(this.showFormExp) 
   }
-
   onToggle():Observable<any>{
     return this.subject.asObservable();
   }
+  //=====================================
+
+  
+  //============== FormExp ==============
+  toggleShowStudies():void{
+    this.showFormStd = !this.showFormStd;
+    this.studies.next(this.showFormStd) 
+  }
+  onToggleStd():Observable<any>{
+    return this.studies.asObservable();
+  }
+  //=====================================
+  
+
 
 
 }

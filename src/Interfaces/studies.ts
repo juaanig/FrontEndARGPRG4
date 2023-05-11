@@ -2,7 +2,7 @@ export interface Studies {
 
     id?:number;
     title:string;
-    expStd:string;
+    stdData:string;
     //sDate:Date
     //fDate:Date
 

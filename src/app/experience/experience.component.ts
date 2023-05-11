@@ -16,12 +16,12 @@ export class ExperienceComponent {
 
   title:string = "" ;
   expData:string= "" ;
-  show:boolean = false ;
+  showFormExp:boolean = false ;
   subscription?:Subscription;
   
   constructor( private uiService:UiService, private experienceService:ExperienceService){
     
-    this.subscription = this.uiService.onToggle().subscribe(value => this.show = value)
+    this.subscription = this.uiService.onToggle().subscribe(value => this.showFormExp = value)
   }
   
   
@@ -36,7 +36,7 @@ export class ExperienceComponent {
   }
 
   //Función que cambia atributo show para mostar formularia de carga de experiencia
-  toggleAddExperience = () => this.uiService.toggleAddExperience() ;
+  toggleAddExperience = () => this.uiService.toggleShowExperience() ;
 
   //para borrar experiencia funcion que va desde el dom al server
   onDelete(experience:Experience){

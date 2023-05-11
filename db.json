@@ -14,11 +14,23 @@
       "id": 2,
       "title": "Coop de trabajo jabonera de cañada rosquin",
       "expData": "Oficial mecanico "
+    }
+  ],
+  "studies": [
+    {
+      "id": 0,
+      "title": "Secundaria ETTP N° 343",
+      "stdData": "Tecnico electro mecánico"
     },
     {
-      "title": "COA ",
-      "expData": "Technical Analyst Support",
-      "id": 4
+      "id": 1,
+      "title": "UTN frba 2021",
+      "stdData": "Full stack developer"
+    },
+    {
+      "id": 2,
+      "title": "UTN frro 2023",
+      "stdData": "Tecnico universitario en programación "
     }
   ]
 }
