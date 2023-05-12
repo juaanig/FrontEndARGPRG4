@@ -1,14 +1,13 @@
-<!--Si User entra logeado-->
-<section class="exp-general" >
+<section class="skl-general" >
     <!-- ================================================================================================== -->
-    <button class="btn btn-warning m-3" (click)="toggleAddExperience()">Añadir Experiencia</button>
+    <button class="btn btn-warning m-3" (click)="toggleAddSkills()">Añadir habilidad</button>
 
-    <div class="container" *ngIf="showFormExp">
+    <div class="container" *ngIf="showFormSkl">
         <div class="d-flex flex-column mt-3 mb-3">
             <form action="" >
                 <div class="d-flex flex-column form-control" >
                     <input type="text" [(ngModel)]="title" name="title">
-                    <textarea name="expData" id="" cols="30" rows="10" [(ngModel)]="expData" ></textarea>
+                    <textarea name="description" id="" cols="30" rows="10" [(ngModel)]="description" ></textarea>
                 </div>
                 <div class="form-control">
                     <button class="btn btn-success" (click)="onAdd()">confirmar</button>
@@ -17,11 +16,12 @@
         </div>
     </div>
     <!-- ================================================================================================== -->
-    <div class="container mt-3 card text-bg-primary mb-3" *ngFor="let exp of experiences" >
-        <h4 class="card-title">{{exp.title}}</h4>
-        <p class="card-text">{{exp.expData}}</p>
+    <div class="container mt-3 card text-bg-primary mb-3" *ngFor="let skl of skills" >
+        <h4 class="card-title">{{skl.title}}</h4>
+        <p class="card-text">{{skl.description}}</p>
         <div class="d-flex flex-row-reverse mb-2">
-            <button class="btn btn-danger" (click)="onDelete(exp)">borrar</button>
+            <button class="btn btn-danger" (click)="onDelete(skl)">borrar</button>
         </div>
     </div>
 </section>
+

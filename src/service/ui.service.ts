@@ -12,8 +12,13 @@ export class UiService {
   //============== FormStd ==============
   private showFormStd:boolean = false;
   
+  //============== FormStd ==============
+  private showFormSkl:boolean = false;
+
+
   private subject = new Subject<any>();
   private studies = new Subject<any>();
+  private skills = new Subject<any>();
 
 
   constructor() { }
@@ -29,7 +34,7 @@ export class UiService {
   //=====================================
 
   
-  //============== FormExp ==============
+  //============== FormStd ==============
   toggleShowStudies():void{
     this.showFormStd = !this.showFormStd;
     this.studies.next(this.showFormStd) 
@@ -39,6 +44,15 @@ export class UiService {
   }
   //=====================================
   
+  //============== FormSkl ==============
+  toggleShowSkills():void{
+    this.showFormSkl = !this.showFormSkl;
+    this.skills.next(this.showFormSkl) 
+  }
+  onToggleSkl():Observable<any>{
+    return this.skills.asObservable();
+  }
+  //=====================================
 
 
 

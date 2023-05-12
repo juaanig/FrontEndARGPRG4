@@ -32,5 +32,12 @@
       "title": "UTN frro 2023",
       "stdData": "Tecnico universitario en programación "
     }
+  ],
+  "skills":[
+    {
+      "id": 0,
+      "title": "Typescript",
+      "description": "Angular"
+    }
   ]
 }

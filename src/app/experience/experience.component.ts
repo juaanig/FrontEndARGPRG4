@@ -1,5 +1,5 @@
-import { Component,EventEmitter,Output } from '@angular/core';
-import { Observable, Subscription } from 'rxjs';
+import { Component } from '@angular/core';
+import { Subscription } from 'rxjs';
 import { Experience } from '../../Interfaces/experience';
 import { ExperienceService } from '../../service/experience.service';
 import { UiService } from '../../service/ui.service';
