@@ -5,7 +5,11 @@
       </div>
     </div>
     <div class="nav-login">
-      <button>Login</button>
+      <button routerLink="/login" *ngIf="!getIdToken()">LogIn</button>
     </div>
+    <div class="nav-login">
+      <button (click)="logout()" *ngIf="getIdToken()">Logout</button>
+    </div>
+
 </nav>
 <router-outlet></router-outlet>

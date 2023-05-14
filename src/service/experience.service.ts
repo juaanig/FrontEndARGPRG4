@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { Observable } from 'rxjs';
 import { Experience } from '../Interfaces/experience';
 import {HttpClient,HttpHeaders} from '@angular/common/http';
+import { DataServices } from 'src/app/data.services';
 
 //=====================================
 const httpOptions = {
@@ -14,25 +15,29 @@ const httpOptions = {
 export class ExperienceService {
 
   private apiUrl = 'http://localhost:5000/experiences';
+  experiences:Experience[] = [];
 
-  constructor(private http:HttpClient ) { }
+  constructor(private http:HttpClient, private dataServie: DataServices ) { }
 
-  getExperiences(): Observable<Experience[]> {
-    return this.http.get<Experience[]>(this.apiUrl);
+  setExperience(exp:Experience[]){
+    this.experiences = exp;
   }
 
-  deleteExperience(Experience:Experience): Observable<Experience>{
-    const url = `${this.apiUrl}/${Experience.id}`;
-    return this.http.delete<Experience>(url);
+  getExperiences(){
+    return this.dataServie.getExperiences();
+
   }
 
-  // updateExperienceReminder(Experience:Experience): Observable<Experience>{
-  //   const url = `${this.apiUrl}/${Experience.id}`;
-  //   return this.http.put<Experience>(url,Experience,httpOptions);
-  // }
+  deleteExperience(index:number){
+    this.experiences.splice(index,1)
+    this.dataServie.deleteExperience(index)
+    this.dataServie.saveExperiences(this.experiences)
 
-  addExperience(experience:Experience):Observable<Experience>{
-    return this.http.post<Experience>(this.apiUrl,experience,httpOptions);
+  }
+
+  addExperience(experience:Experience){
+    this.experiences.push(experience);  
+    this.dataServie.saveExperiences(this.experiences);
   }
 
 

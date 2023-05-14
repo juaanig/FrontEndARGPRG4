@@ -11,8 +11,10 @@ import { SkillsComponent } from './skills/skills.component';
 import { FooterComponent } from './footer/footer.component';
 import { LoginComponent } from './login/login.component';
 import { HomeComponent } from './home/home.component';
-import { NavComponent } from './nav/nav.component'
 import { RouterModule, Routes } from '@angular/router';
+import { DataServices } from './data.services';
+import { LoginService } from './login/login.service';
+import { CookieService } from 'ngx-cookie-service';
 
 const routes: Routes = [
   { path: '', component: HomeComponent },
@@ -40,6 +42,7 @@ const routes: Routes = [
     HttpClientModule,
     RouterModule.forRoot(routes)
   ],
+  providers:[DataServices,LoginService,CookieService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
