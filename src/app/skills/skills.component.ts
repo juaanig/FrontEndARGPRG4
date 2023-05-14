@@ -3,6 +3,7 @@ import { UiService } from 'src/service/ui.service';
 import { Skills } from 'src/Interfaces/skills';
 import { SkillsService } from 'src/service/skills.service';
 import { Subscription } from 'rxjs';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-skills',
@@ -18,7 +19,7 @@ export class SkillsComponent {
   showFormSkl:boolean = false ;
   subscription?:Subscription;
   
-  constructor( private uiService:UiService, private skillsService:SkillsService){
+  constructor( private uiService:UiService, private skillsService:SkillsService,private loginService:LoginService){
     
     this.subscription = this.uiService.onToggleSkl().subscribe(value => this.showFormSkl = value)
   }
@@ -30,6 +31,10 @@ export class SkillsComponent {
       this.skillsService.setSkills(this.skills)
     })
 
+  }
+
+  getIdToken(){
+    return this.loginService.getIdToken();
   }
 
   toggleAddSkills = () => this.uiService.toggleShowSkills();
@@ -45,7 +50,7 @@ export class SkillsComponent {
     const newSkill:Skills = {title,description}
 
     this.skillsService.addSkill(newSkill);
-    
+    this.toggleAddSkills();
   }
     
   

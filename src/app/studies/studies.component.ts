@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { Studies } from 'src/Interfaces/studies';
 import { StudiesService } from 'src/service/studies.service';
 import { UiService } from 'src/service/ui.service';
+import { LoginService } from '../login/login.service';
 
 @Component({
   selector: 'app-studies',
@@ -18,7 +19,7 @@ export class StudiesComponent {
   showFormStudies:boolean = false   
   subscription?:Subscription;
 
-  constructor( private uiService:UiService,private studiesService:StudiesService){
+  constructor( private uiService:UiService,private studiesService:StudiesService,private loginService:LoginService){
     this.subscription = this.uiService.onToggleStd().subscribe(value => this.showFormStudies = value)
   }
 
@@ -29,6 +30,10 @@ export class StudiesComponent {
       this.studiesService.setStudies(this.studies)
     })
 
+  }
+
+  getIdToken(){
+    return this.loginService.getIdToken();
   }
 
   toggleAddStudies = () => this.uiService.toggleShowStudies();
@@ -44,6 +49,7 @@ export class StudiesComponent {
     const newStudie:Studies = {title,stdData}
 
     this.studiesService.addStudie(newStudie);
+    this.toggleAddStudies();
     
   }
 

@@ -3,6 +3,7 @@ import { Subscription } from 'rxjs';
 import { Experience } from '../../Interfaces/experience';
 import { ExperienceService } from '../../service/experience.service';
 import { UiService } from '../../service/ui.service';
+import { LoginService } from '../login/login.service';
 
 
 @Component({
@@ -19,10 +20,14 @@ export class ExperienceComponent {
   showFormExp:boolean = false ;
   subscription?:Subscription;
   
-  constructor( private uiService:UiService, private experienceService:ExperienceService){
+  constructor( private uiService:UiService, private experienceService:ExperienceService,private loginService:LoginService){
     this.subscription = this.uiService.onToggle().subscribe(value => this.showFormExp = value)
   }
   
+  getIdToken(){
+    return this.loginService.getIdToken();
+  }
+
   ngOnInit():void{
 
     this.experienceService.getExperiences().subscribe((e)=>{ 
@@ -46,7 +51,7 @@ export class ExperienceComponent {
     const newExperience:Experience = {title,expData}
 
     this.experienceService.addExperience(newExperience);
-    
+    this.toggleAddExperience();
   }
 
 }

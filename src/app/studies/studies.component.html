@@ -1,7 +1,7 @@
 <!--Si User entra logeado-->
 <section class="studies-general" >
     <!-- ================================================================================================== -->
-    <button class="btn btn-warning m-3" (click)="toggleAddStudies()">Añadir estudios</button>
+    <button class="btn btn-warning m-3" (click)="toggleAddStudies()" *ngIf="getIdToken()" >Añadir estudios</button>
 
     <div class="container" *ngIf="showFormStudies">
         <div class="d-flex flex-column mt-3 mb-3">
@@ -21,7 +21,7 @@
         <h4 class="card-title">{{std.title}}</h4>
         <p class="card-text">{{std.stdData}}</p>
         <div class="d-flex flex-row-reverse mb-2">
-            <button class="btn btn-danger" (click)="onDelete(std)">borrar</button>
+            <button class="btn btn-danger" (click)="onDelete(std)" *ngIf="getIdToken()" >borrar</button>
         </div>
     </div>
 </section>

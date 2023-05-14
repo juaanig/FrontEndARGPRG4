@@ -1,7 +1,7 @@
 <!--Si User entra logeado-->
 <section class="exp-general" >
     <!-- ================================================================================================== -->
-    <button class="btn btn-warning m-3" (click)="toggleAddExperience()">Añadir Experiencia</button>
+    <button class="btn btn-warning m-3" (click)="toggleAddExperience()" *ngIf="getIdToken()">Añadir Experiencia</button>
 
     <div class="container" *ngIf="showFormExp">
         <div class="d-flex flex-column mt-3 mb-3">
@@ -21,7 +21,7 @@
         <h4 class="card-title">{{exp.title}}</h4>
         <p class="card-text">{{exp.expData}}</p>
         <div class="d-flex flex-row-reverse mb-2">
-            <button class="btn btn-danger" (click)="onDelete(exp)">borrar</button>
+            <button class="btn btn-danger" (click)="onDelete(exp)" *ngIf="getIdToken()">borrar</button>
         </div>
     </div>
 </section>

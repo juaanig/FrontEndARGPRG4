@@ -1,6 +1,6 @@
 <section class="skl-general" >
     <!-- ================================================================================================== -->
-    <button class="btn btn-warning m-3" (click)="toggleAddSkills()">Añadir habilidad</button>
+    <button class="btn btn-warning m-3" (click)="toggleAddSkills()" *ngIf="getIdToken()" >Añadir habilidad</button>
 
     <div class="container" *ngIf="showFormSkl">
         <div class="d-flex flex-column mt-3 mb-3">
@@ -20,7 +20,7 @@
         <h4 class="card-title">{{skl.title}}</h4>
         <p class="card-text">{{skl.description}}</p>
         <div class="d-flex flex-row-reverse mb-2">
-            <button class="btn btn-danger" (click)="onDelete(skl)">borrar</button>
+            <button class="btn btn-danger" (click)="onDelete(skl)" *ngIf="getIdToken()" >borrar</button>
         </div>
     </div>
 </section>
