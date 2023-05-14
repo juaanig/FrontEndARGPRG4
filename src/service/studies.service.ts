@@ -1,37 +1,34 @@
-import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Injectable } from '@angular/core';
-import { Observable } from 'rxjs';
 import { Studies } from 'src/Interfaces/studies';
+import { DataServices } from 'src/app/data.services';
 
-//=====================================
-const httpOptions = {
-  headers: new HttpHeaders({ 'Content-type':'application/json' })
-}
-//=====================================
 @Injectable({
   providedIn: 'root'
 })
 export class StudiesService {
+  
+  studies:Studies[]=[];
 
-  private apiUrl = 'http://localhost:5000/studies';
+  constructor(private studiesServices: DataServices ) { }
 
-  constructor(private http:HttpClient ) { }
-
-  getStudies(): Observable<Studies[]> {
-    return this.http.get<Studies[]>(this.apiUrl);
+  setStudies(std:Studies[]){
+    this.studies = std;
   }
 
-  deleteStudie(Studie:Studies): Observable<Studies>{
-    const url = `${this.apiUrl}/${Studie.id}`;
-    return this.http.delete<Studies>(url);
+  getStudies(){
+    return this.studiesServices.getStudies();
   }
 
-  // updateStudieReminder(Studie:Studie): Observable<Studie>{
-  //   const url = `${this.apiUrl}/${Studie.id}`;
-  //   return this.http.put<Studie>(url,Studie,httpOptions);
-  // }
+  deleteStudie(index:number){
+    this.studies.splice(index,1)
+    this.studiesServices.deleteStudie(index)
+    this.studiesServices.saveStudies(this.studies)
 
-  addStudie(Studie:Studies):Observable<Studies>{
-    return this.http.post<Studies>(this.apiUrl,Studie,httpOptions);
   }
+
+  addStudie(std:Studies){
+    this.studies.push(std);  
+    this.studiesServices.saveStudies(this.studies);
+  }
+
 }

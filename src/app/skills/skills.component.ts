@@ -23,36 +23,30 @@ export class SkillsComponent {
     this.subscription = this.uiService.onToggleSkl().subscribe(value => this.showFormSkl = value)
   }
   
-  
   ngOnInit():void{
-    this.skillsService.getSkills().subscribe((skl)=>{
-      this.skills = skl;      
-    });
-    
+
+    this.skillsService.getSkills().subscribe((e)=>{ 
+      this.skills = Object.values(e)
+      this.skillsService.setSkills(this.skills)
+    })
+
   }
 
-  toggleAddSkills = () => {
-    this.uiService.toggleShowSkills() ;
+  toggleAddSkills = () => this.uiService.toggleShowSkills();
 
-    console.log("se hizo click en habilidad")
+  onDelete(skl:Skills){
+    let index = this.skills.indexOf(skl);
+    this.skillsService.deleteSkill(index)
   }
-  onDelete(skills:Skills){
-    this.skillsService.deleteSkills(skills).subscribe(()=>{
-      this.skills = this.skills.filter( (skl) => skl.id !== skills.id )
-    });
-  }
-
 
   onAdd(){
 
     const {title,description} = this
     const newSkill:Skills = {title,description}
 
-    this.skillsService.addSkills(newSkill).subscribe((newSkill)=>{{
-      this.skills.push(newSkill)
-    }})
+    this.skillsService.addSkill(newSkill);
+    
+  }
     
   
-  }
-
 }
