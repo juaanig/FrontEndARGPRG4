@@ -1,16 +1,18 @@
-<form action="" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
-    <div class="d-flex justify-content-center m-5 ">
-        <div class="grid text-center login">
-            <div class="form-outline mb-4" class="g-col-3 g-start-2">
-                <label class="form-label">User</label>
-                <input class="form-control" type="text" name="user" id="user" ngModel>
+<div class="container-form">
+    <form action="" #loginForm="ngForm" (ngSubmit)="login(loginForm)">
+        <div class="d-flex justify-content-center m-5 ">
+            <div class="grid text-center login">
+                <div class="form-outline mb-4" class="g-col-3 g-start-2">
+                    <label class="form-label">User</label>
+                    <input class="form-control" type="text" name="user" id="user" ngModel>
+                </div>
+                <div class="form-outline mb-4">
+                    <label class="form-label">Password</label>
+                    <input class="form-control" type="password" name="pass" id="pass" ngModel>
+                </div>
+                <br>
+                <button class="btn btn-success" type="submit" >Log In</button>
             </div>
-            <div class="form-outline mb-4">
-                <label class="form-label">Password</label>
-                <input class="form-control" type="password" name="pass" id="pass" ngModel>
-            </div>
-            <br>
-            <button class="btn btn-success" type="submit" >Log In</button>
         </div>
-    </div>
-</form>
+    </form>
+</div>
