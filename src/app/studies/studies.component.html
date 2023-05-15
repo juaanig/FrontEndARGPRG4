@@ -1,5 +1,6 @@
 <!--Si User entra logeado-->
-<section class="studies-general" >
+<section class="studies-general p-3" >
+    <h2 class="ms-5">Studies</h2>
     <!-- ================================================================================================== -->
     <button class="btn btn-warning m-3" (click)="toggleAddStudies()" *ngIf="getIdToken()" >Añadir estudios</button>
 
@@ -17,7 +18,7 @@
         </div>
     </div>
     <!-- ================================================================================================== -->
-    <div class="container mt-3 card text-bg-primary mb-3" *ngFor="let std of studies" >
+    <div class="container mt-3 card text-bg-dark mb-3" *ngFor="let std of studies" >
         <h4 class="card-title">{{std.title}}</h4>
         <p class="card-text">{{std.stdData}}</p>
         <div class="d-flex flex-row-reverse mb-2">
@@ -25,3 +26,4 @@
         </div>
     </div>
 </section>
+<hr>

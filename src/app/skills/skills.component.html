@@ -1,4 +1,5 @@
-<section class="skl-general" >
+<section class="skl-general p-3" >
+    <h2 class="ms-5">Skills</h2>
     <!-- ================================================================================================== -->
     <button class="btn btn-warning m-3" (click)="toggleAddSkills()" *ngIf="getIdToken()" >Añadir habilidad</button>
 
@@ -16,7 +17,7 @@
         </div>
     </div>
     <!-- ================================================================================================== -->
-    <div class="container mt-3 card text-bg-primary mb-3" *ngFor="let skl of skills" >
+    <div class="container mt-3 card text-bg-dark mb-3" *ngFor="let skl of skills" >
         <h4 class="card-title">{{skl.title}}</h4>
         <p class="card-text">{{skl.description}}</p>
         <div class="d-flex flex-row-reverse mb-2">
@@ -24,4 +25,4 @@
         </div>
     </div>
 </section>
-
+<hr>

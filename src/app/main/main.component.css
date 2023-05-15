@@ -4,7 +4,6 @@
 .img-port-profile{
     margin: 10px;
     padding-bottom: 50px;
-
 }
 
 .img-port{
@@ -27,6 +26,7 @@
 }
 /*  ============= DATA  =============*/
 .data-person{
-    background-color: aliceblue;
-    margin: 50px 25px;
+    background-color: rgb(245, 245, 245);
+    margin: 55px 25px;
+    padding: 10px;
 }

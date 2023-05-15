@@ -1,5 +1,7 @@
 <!--Si User entra logeado-->
-<section class="exp-general" >
+<hr>
+<section class="exp-general p-3" >
+    <h2 class="ms-5">Jobs</h2>
     <!-- ================================================================================================== -->
     <button class="btn btn-warning m-3" (click)="toggleAddExperience()" *ngIf="getIdToken()">Añadir Experiencia</button>
 
@@ -17,7 +19,7 @@
         </div>
     </div>
     <!-- ================================================================================================== -->
-    <div class="container mt-3 card text-bg-primary mb-3" *ngFor="let exp of experiences" >
+    <div class="container mt-3 card text-bg-dark mb-3" *ngFor="let exp of experiences" >
         <h4 class="card-title">{{exp.title}}</h4>
         <p class="card-text">{{exp.expData}}</p>
         <div class="d-flex flex-row-reverse mb-2">
@@ -25,3 +27,4 @@
         </div>
     </div>
 </section>
+<hr>
